@@ -1,0 +1,3 @@
+# files to ignore
+# ignore bert model folder
+bert-base-uncased/
