@@ -1,0 +1,1 @@
+/usr/bin/g++ "CMakeFiles/my_executable.dir/03-bert-infer.cu.o" -o my_executable  -lnvinfer -lnvparsers -lnvonnxparser -lcudart -lcudadevrt -lcudart_static -lrt -lpthread -ldl  -L"/usr/local/cuda/targets/x86_64-linux/lib/stubs" -L"/usr/local/cuda/targets/x86_64-linux/lib"

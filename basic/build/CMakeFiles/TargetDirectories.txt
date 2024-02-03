@@ -1,0 +1,3 @@
+/workspace/TensorRT-and-LLM/basic/build/CMakeFiles/my_executable.dir
+/workspace/TensorRT-and-LLM/basic/build/CMakeFiles/edit_cache.dir
+/workspace/TensorRT-and-LLM/basic/build/CMakeFiles/rebuild_cache.dir
