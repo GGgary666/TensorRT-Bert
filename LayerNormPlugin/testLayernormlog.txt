@@ -1,0 +1,153 @@
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::BatchedNMSDynamic_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::BatchedNMS_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::BatchTilePlugin_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::Clip_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::CoordConvAC version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::CropAndResizeDynamic version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::CropAndResize version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::DecodeBbox3DPlugin version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::DetectionLayer_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::EfficientNMS_Explicit_TF_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::EfficientNMS_Implicit_TF_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::EfficientNMS_ONNX_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::EfficientNMS_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::FlattenConcat_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::GenerateDetection_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::GridAnchor_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::GridAnchorRect_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::InstanceNormalization_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::InstanceNormalization_TRT version 2
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::LReLU_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::ModulatedDeformConv2d version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::MultilevelCropAndResize_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::MultilevelProposeROI_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::MultiscaleDeformableAttnPlugin_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::NMSDynamic_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::NMS_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::Normalize_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::PillarScatterPlugin version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::PriorBox_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::ProposalDynamic version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::ProposalLayer_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::Proposal version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::PyramidROIAlign_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::Region_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::Reorg_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::ResizeNearest_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::ROIAlign_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::RPROI_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::ScatterND version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::SpecialSlice_TRT version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::Split version 1
+[02/28/2024-14:21:52] [TRT] [V] Registered plugin creator - ::VoxelGeneratorPlugin version 1
+[02/28/2024-14:21:52] [TRT] [I] [MemUsageChange] Init CUDA: CPU +14, GPU +0, now: CPU 26, GPU 528 (MiB)
+[02/28/2024-14:21:52] [TRT] [V] Trying to load shared library libnvinfer_builder_resource.so.8.6.1
+[02/28/2024-14:21:52] [TRT] [V] Loaded shared library libnvinfer_builder_resource.so.8.6.1
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] Init builder kernel library: CPU +1443, GPU +268, now: CPU 1545, GPU 795 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] CUDA lazy loading is enabled.
+[02/28/2024-14:21:56] [TRT] [V] Original: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] After dead-layer removal: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] Graph construction completed in 0.000200668 seconds.
+[02/28/2024-14:21:56] [TRT] [V] After Myelin optimization: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] Applying ScaleNodes fusions.
+[02/28/2024-14:21:56] [TRT] [V] After scale fusion: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] After dupe layer removal: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] After final dead-layer removal: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] After tensor merging: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] After vertical fusions: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] After dupe layer removal: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] After final dead-layer removal: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] After tensor merging: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] After slice removal: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] After concat removal: 1 layers
+[02/28/2024-14:21:56] [TRT] [V] Trying to split Reshape and strided tensor
+[02/28/2024-14:21:56] [TRT] [I] Graph optimization time: 9.7375e-05 seconds.
+[02/28/2024-14:21:56] [TRT] [V] Trying to load shared library libcublas.so.12
+[02/28/2024-14:21:56] [TRT] [V] Loaded shared library libcublas.so.12
+[02/28/2024-14:21:56] [TRT] [V] Using cublas as plugin tactic source
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +7, GPU +10, now: CPU 1552, GPU 805 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] Trying to load shared library libcudnn.so.8
+[02/28/2024-14:21:56] [TRT] [V] Loaded shared library libcudnn.so.8
+[02/28/2024-14:21:56] [TRT] [V] Using cuDNN as plugin tactic source
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +10, now: CPU 1553, GPU 815 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] Building graph using backend strategy 2
+[02/28/2024-14:21:56] [TRT] [I] Local timing cache in use. Profiling results in this builder pass will not be stored.
+[02/28/2024-14:21:56] [TRT] [V] Constructing optimization profile number 0 [1/1].
+[02/28/2024-14:21:56] [TRT] [V] Applying generic optimizations to the graph for inference.
+[02/28/2024-14:21:56] [TRT] [V] Reserving memory for host IO tensors. Host: 0 bytes
+[02/28/2024-14:21:56] [TRT] [V] =============== Computing costs for (Unnamed Layer* 0) [PluginV2DynamicExt]
+[02/28/2024-14:21:56] [TRT] [V] *************** Autotuning format combination: Half((* 768 (# 1 (SHAPE inputT))),768,1) -> Half((* 768 (# 1 (SHAPE inputT))),768,1) where E0=(* 768 (# 1 (SHAPE inputT))) ***************
+[02/28/2024-14:21:56] [TRT] [V] =============== Computing reformatting costs
+[02/28/2024-14:21:56] [TRT] [V] =============== Computing reformatting costs
+[02/28/2024-14:21:56] [TRT] [V] =============== Computing reformatting costs: 
+[02/28/2024-14:21:56] [TRT] [V] *************** Autotuning Reformat: Half((* 768 (# 1 (SHAPE inputT))),768,1) -> Float((* 768 (# 1 (SHAPE inputT))),768,1) ***************
+[02/28/2024-14:21:56] [TRT] [V] --------------- Timing Runner: Optimizer Reformat(<in> -> (Unnamed Layer* 0) [PluginV2DynamicExt]_output) (Reformat[0x80000006])
+[02/28/2024-14:21:56] [TRT] [V] Tactic: 0x00000000000003e8 Time: 0.00490949
+[02/28/2024-14:21:56] [TRT] [V] Tactic: 0x00000000000003ea Time: 0.014464
+[02/28/2024-14:21:56] [TRT] [V] Tactic: 0x0000000000000000 Time: 0.0058807
+[02/28/2024-14:21:56] [TRT] [V] Optimizer Reformat(<in> -> (Unnamed Layer* 0) [PluginV2DynamicExt]_output) (Reformat[0x80000006]) profiling completed in 0.0136949 seconds. Fastest Tactic: 0x00000000000003e8 Time: 0.00490949
+[02/28/2024-14:21:56] [TRT] [V] Adding reformat layer: Reformatted Output Tensor 0 to (Unnamed Layer* 0) [PluginV2DynamicExt] ((Unnamed Layer* 0) [PluginV2DynamicExt]_output) from Half((* 768 (# 1 (SHAPE inputT))),768,1) to Float((* 768 (# 1 (SHAPE inputT))),768,1)
+[02/28/2024-14:21:56] [TRT] [V] Formats and tactics selection completed in 0.0139565 seconds.
+[02/28/2024-14:21:56] [TRT] [V] After reformat layers: 2 layers
+[02/28/2024-14:21:56] [TRT] [V] Total number of blocks in pre-optimized block assignment: 2
+[02/28/2024-14:21:56] [TRT] [I] Detected 1 inputs and 1 output network tensors.
+[02/28/2024-14:21:56] [TRT] [V] Layer: (Unnamed Layer* 0) [PluginV2DynamicExt] Host Persistent: 112 Device Persistent: 0 Scratch Memory: 0
+[02/28/2024-14:21:56] [TRT] [V] Skipped printing memory information for 1 layers with 0 memory size i.e. Host Persistent + Device Persistent + Scratch Memory == 0.
+[02/28/2024-14:21:56] [TRT] [I] Total Host Persistent Memory: 112
+[02/28/2024-14:21:56] [TRT] [I] Total Device Persistent Memory: 0
+[02/28/2024-14:21:56] [TRT] [I] Total Scratch Memory: 0
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageStats] Peak memory usage of TRT CPU/GPU memory allocators: CPU 0 MiB, GPU 32 MiB
+[02/28/2024-14:21:56] [TRT] [I] [BlockAssignment] Started assigning block shifts. This will take 1 steps to complete.
+[02/28/2024-14:21:56] [TRT] [I] [BlockAssignment] Algorithm ShiftNTopDown took 0.004889ms to assign 1 blocks to 1 nodes requiring 6291456 bytes.
+[02/28/2024-14:21:56] [TRT] [V] Total number of blocks in optimized block assignment: 1
+[02/28/2024-14:21:56] [TRT] [I] Total Activation Memory: 6291456
+[02/28/2024-14:21:56] [TRT] [V] Total number of generated kernels selected for the engine: 0
+[02/28/2024-14:21:56] [TRT] [V] Disabling unused tactic source: EDGE_MASK_CONVOLUTIONS
+[02/28/2024-14:21:56] [TRT] [V] Disabling unused tactic source: JIT_CONVOLUTIONS
+[02/28/2024-14:21:56] [TRT] [V] Trying to load shared library libcublas.so.12
+[02/28/2024-14:21:56] [TRT] [V] Loaded shared library libcublas.so.12
+[02/28/2024-14:21:56] [TRT] [V] Using cublas as plugin tactic source
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +8, now: CPU 1568, GPU 827 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] Trying to load shared library libcudnn.so.8
+[02/28/2024-14:21:56] [TRT] [V] Loaded shared library libcudnn.so.8
+[02/28/2024-14:21:56] [TRT] [V] Using cuDNN as plugin tactic source
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +10, now: CPU 1568, GPU 837 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] Engine generation completed in 0.0300914 seconds.
+[02/28/2024-14:21:56] [TRT] [V] Deleting timing cache: 1 entries, served 0 hits since creation.
+[02/28/2024-14:21:56] [TRT] [V] Engine Layer Information:
+Layer(PluginV2): (Unnamed Layer* 0) [PluginV2DynamicExt], Tactic: 0x0000000000000000, inputT (Half[-1,-1,768]) -> Reformatted Output Tensor 0 to (Unnamed Layer* 0) [PluginV2DynamicExt] (Half[-1,-1,768])
+Layer(Reformat): Reformatting CopyNode for Output Tensor 0 to (Unnamed Layer* 0) [PluginV2DynamicExt], Tactic: 0x00000000000003e8, Reformatted Output Tensor 0 to (Unnamed Layer* 0) [PluginV2DynamicExt] (Half[-1,-1,768]) -> (Unnamed Layer* 0) [PluginV2DynamicExt]_output (Float[-1,-1,768])
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in building engine: CPU +0, GPU +0, now: CPU 0, GPU 0 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] Adding 1 engine(s) to plan file.
+[02/28/2024-14:21:56] [TRT] [I] Loaded engine size: 0 MiB
+[02/28/2024-14:21:56] [TRT] [V] Local registry did not find LayerNorm creator. Will try parent registry if enabled.
+[02/28/2024-14:21:56] [TRT] [V] Global registry found LayerNorm creator.
+[02/28/2024-14:21:56] [TRT] [V] Trying to load shared library libcublas.so.12
+[02/28/2024-14:21:56] [TRT] [V] Loaded shared library libcublas.so.12
+[02/28/2024-14:21:56] [TRT] [V] Using cublas as plugin tactic source
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +10, now: CPU 1567, GPU 813 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] Trying to load shared library libcudnn.so.8
+[02/28/2024-14:21:56] [TRT] [V] Loaded shared library libcudnn.so.8
+[02/28/2024-14:21:56] [TRT] [V] Using cuDNN as plugin tactic source
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +8, now: CPU 1568, GPU 821 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] Deserialization required 1668 microseconds.
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +0, now: CPU 0, GPU 0 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] Trying to load shared library libcublas.so.12
+[02/28/2024-14:21:56] [TRT] [V] Loaded shared library libcublas.so.12
+[02/28/2024-14:21:56] [TRT] [V] Using cublas as plugin tactic source
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +10, now: CPU 1567, GPU 813 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] Trying to load shared library libcudnn.so.8
+[02/28/2024-14:21:56] [TRT] [V] Loaded shared library libcudnn.so.8
+[02/28/2024-14:21:56] [TRT] [V] Using cuDNN as plugin tactic source
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +8, now: CPU 1568, GPU 821 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] Total per-runner device persistent memory is 0
+[02/28/2024-14:21:56] [TRT] [V] Total per-runner host persistent memory is 112
+[02/28/2024-14:21:56] [TRT] [V] Allocated activation device memory of size 6291456
+[02/28/2024-14:21:56] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +6, now: CPU 0, GPU 6 (MiB)
+[02/28/2024-14:21:56] [TRT] [V] CUDA lazy loading is enabled.
+using FP16!!!!
+Binding all? Yes
+input -> DataType.HALF (-1, -1, 768) (4, 64, 768)
+output-> DataType.FLOAT (-1, -1, 768) (4, 64, 768)
+check result:
+False max diff=nan
