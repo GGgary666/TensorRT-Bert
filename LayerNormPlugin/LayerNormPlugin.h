@@ -102,19 +102,15 @@ public:
         {
         case 0:
             res = (inOut[pos].type == DataType::kFLOAT);
-            // printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-            // if(res)
-            //     printf("inOut[pos].type = DataType::kHALF\n");
-            // else printf("inOut[pos].type != DataType::kHALF\n");
-            // printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
             break;
         case 1:
+            res = (inOut[pos].type == DataType::kFLOAT);
+            break;
+        case 2:
+            res = (inOut[pos].type == DataType::kFLOAT);
+            break;
+        case 3:
             res = inOut[pos].type == inOut[0].type;
-            //  printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
-            // if(res)
-            //     printf("inOut[pos].type = inOut[0].type\n");
-            // else printf("inOut[pos].type != inOut[0].type\n");
-            // printf("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
             break;
         default:// should NOT be here
             res = false;

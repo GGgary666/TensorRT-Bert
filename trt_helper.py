@@ -145,13 +145,14 @@ class TrtNetworkHelper():
         pfc = trt.PluginFieldCollection([])
         LN_creator = self.plugin_registry.get_plugin_creator("LayerNorm", "1", "")
         LN_plug = LN_creator.create_plugin("LayerNorm", pfc)
-        LN = self.network.add_plugin_v2([x], LN_plug)
+        
 
-        GAMMA = self.network.add_constant((1, 1, gamma.shape[0]), trt.Weights(np.ascontiguousarray(gamma, dtype=np.float32)))
-        BETA = self.network.add_constant((1, 1, beta.shape[0]), trt.Weights(np.ascontiguousarray(beta, dtype=np.float32)))
-        scale_layer = self.network.add_elementwise(LN.get_output(0), GAMMA.get_output(0), trt.ElementWiseOperation.PROD)
-        trt_layer = self.network.add_elementwise(scale_layer.get_output(0), BETA.get_output(0), trt.ElementWiseOperation.SUM)
-
+        GAMMA = self.network.add_constant(gamma.shape, trt.Weights(np.ascontiguousarray(gamma, dtype=np.float32))).get_output(0)
+        BETA = self.network.add_constant(beta.shape, trt.Weights(np.ascontiguousarray(beta, dtype=np.float32))).get_output(0)
+        # scale_layer = self.network.add_elementwise(LN.get_output(0), GAMMA.get_output(0), trt.ElementWiseOperation.PROD)
+        # trt_layer = self.network.add_elementwise(scale_layer.get_output(0), BETA.get_output(0), trt.ElementWiseOperation.SUM)
+        trt_layer = self.network.add_plugin_v2([x, GAMMA, BETA], LN_plug)
+        
         if layer_name is None:
             layer_name = "LayerNorm"
         else:
@@ -165,74 +166,6 @@ class TrtNetworkHelper():
     def addLinear(self, x, weight, bias, layer_name=None, precision=None):
         # add Linear
 
-        # weight = self.addConstant(weight, layer_name="Custom.Linear.Weight")
-        # weight = self.addShuffle(weight, None, (1, *weight.shape), None, "Custom.Linear.Weight_")
-        # mm = self.addMatMul(x, weight, layer_name="Custom.Linear.MatMul_weight")
-
-        # bias = self.addConstant(bias, layer_name="Custom.Linear.Bias")
-        # bias = self.addShuffle(bias, None, mm.shape, None, "Custom.Linear.Bias_")
-        # x = self.addAdd(mm, bias, layer_name="Custom.Linear.Add_bias")
-
-        # W = self.network.add_constant((1, weight.shape[0], weight.shape[1]), trt.Weights(np.ascontiguousarray(weight, dtype=np.float32)))
-        # B = self.network.add_constant((1, 1, bias.shape[0]), trt.Weights(np.ascontiguousarray(bias, dtype=np.float32)))
-        # matmul_layer = self.network.add_matrix_multiply(x, trt.MatrixOperation.NONE, W.get_output(0), trt.MatrixOperation.NONE)
-        # trt_layer = self.network.add_elementwise(matmul_layer.get_output(0), B.get_output(0), trt.ElementWiseOperation.SUM)
-        # x = trt_layer.get_output(0)
-        
-        # if weight.shape[0] == 3072 and weight.shape[1] == 768:
-        #     input_len = len(x.shape)
-        #     print("((((((((((((((((((((((()))))))))))))))))))))))")
-        #     print("input_len")
-        #     print(input_len)
-        #     print("x.shape")
-        #     print(x.shape)
-        #     print("weight.shape")
-        #     print(weight.shape)
-        #     print("bias.shape")
-        #     print(bias.shape)
-        #     if input_len < 3:
-        #         raise RuntimeError("linaer x.shape.size must >= 3")
-        #     if layer_name is None:
-        #         layer_name = "nn.Linear"
-            
-        #     pre_reshape_dims = trt.Dims()
-        #     after_reshape_dims = trt.Dims()
-        #     if input_len == 3:
-        #         pre_reshape_dims = (0, 0, 0, 1, 1)
-        #         after_reshape_dims = (0, 0, 0)
-        #     elif input_len == 4:
-        #         pre_reshape_dims = (0, 0, 0, 0, 1, 1)
-        #         after_reshape_dims = (0, 0, 0, 0)
-        #     elif input_len == 5:
-        #         pre_reshape_dims = (0, 0, 0, 0, 0, 1, 1)
-        #         after_reshape_dims = (0, 0, 0, 0, 0)
-        #     else:
-        #         raise RuntimeError("addLinear x.shape.size > 5 not support!!!")
-        #     trt_layer = self.network.add_shuffle(x)
-        #     trt_layer.reshape_dims = pre_reshape_dims
-
-        #     self.layer_post_process(trt_layer, layer_name+"_pre_reshape", precision)
-
-        #     x = trt_layer.get_output(0)
-        #     print("pre_reshape")
-        #     print(x.shape)
-        #     out_features = weight.shape[1]
-        #     weight = trt.Weights(np.ascontiguousarray(weight))
-        #     if bias is not None:
-        #         bias = trt.Weights(np.ascontiguousarray(bias))
-            
-        #     trt_layer = self.network.add_fully_connected(x, out_features, weight, bias)
-        #     self.layer_post_process(trt_layer, layer_name, precision)
-        #     x = trt_layer.get_output(0)
-
-        #     trt_layer = self.network.add_shuffle(x)
-        #     trt_layer.reshape_dims = after_reshape_dims
-        #     self.layer_post_process(trt_layer, layer_name+"_after_reshape", precision)
-        #     x = trt_layer.get_output(0)
-        #     print("after_reshape")
-        #     print(x.shape)
-        #     print("((((((((((((((((((((((()))))))))))))))))))))))")
-        # else:
         W = self.network.add_constant((1, weight.shape[0], weight.shape[1]), trt.Weights(np.ascontiguousarray(weight, dtype=np.float32)))
         B = self.network.add_constant((1, 1, bias.shape[0]), trt.Weights(np.ascontiguousarray(bias, dtype=np.float32)))
         matmul_layer = self.network.add_matrix_multiply(x, trt.MatrixOperation.NONE, W.get_output(0), trt.MatrixOperation.NONE)

@@ -13,19 +13,22 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
+import time
 import os
 import ctypes
 import numpy as np
 from cuda import cudart  # 使用 cuda runtime API
 import tensorrt as trt
 
+
+trt_type = trt.float32
+np_type = np.float32
+NUM_REPEAT = 100000
 soFilePath      = './LayerNorm.so'
 nBS             = 4
 nSL             = 64
 nEmbedding      = 768
 epsilon         = 6e-6
-
 np.random.seed(97)
 
 def check(a, b, weak = False):
@@ -66,11 +69,11 @@ def run():
     config          = builder.create_builder_config()
     config.max_workspace_size = 6 << 30
     config.flags    = 0
-    # if builder.platform_has_fast_fp16:
-    #     print("using FP16!!!!")
-    #     config.set_flag(trt.BuilderFlag.FP16)
+    if trt_type is trt.float16 and builder.platform_has_fast_fp16:
+        print("using FP16!!!!")
+        config.set_flag(trt.BuilderFlag.FP16)
     inputTensorList = []
-    inputTensorList.append( network.add_input('inputT', trt.float32, [-1,-1,nEmbedding]) )
+    inputTensorList.append( network.add_input('inputT', trt_type, [-1,-1,nEmbedding]) )
 
     profile = builder.create_optimization_profile()
     profile.set_shape('inputT',[1,4,nEmbedding],[4,64,nEmbedding],[16,256,nEmbedding])
@@ -93,7 +96,7 @@ def run():
         print("input ->" if engine.binding_is_input(i) else "output->",engine.get_binding_dtype(i),engine.get_binding_shape(i),context.get_binding_shape(i))
 
     bufferH = []
-    bufferH.append( np.random.rand(nBS,nSL,nEmbedding).astype(np.float32).reshape(nBS,nSL,nEmbedding) * 2 - 1)
+    bufferH.append( np.random.rand(nBS,nSL,nEmbedding).astype(np_type).reshape(nBS,nSL,nEmbedding) * 2 - 1)
     bufferH.append(np.empty(context.get_binding_shape(1),dtype=trt.nptype(engine.get_binding_dtype(1))))
 
     bufferD = []
@@ -103,7 +106,14 @@ def run():
     for i in range(nInput):
         cudart.cudaMemcpy(bufferD[i], bufferH[i].ctypes.data, bufferH[i].nbytes, cudart.cudaMemcpyKind.cudaMemcpyHostToDevice)
 
-    context.execute_v2(bufferD)
+    # 开始时间
+    start_time = time.perf_counter()
+
+    for i in range(NUM_REPEAT):
+        context.execute_v2(bufferD)
+    
+    end_time = time.perf_counter()
+
 
     for i in range(nInput, nInput + nOutput):
         cudart.cudaMemcpy(bufferH[i].ctypes.data, bufferD[i], bufferH[i].nbytes, cudart.cudaMemcpyKind.cudaMemcpyDeviceToHost)
@@ -112,7 +122,10 @@ def run():
     temp1 = bufferH[-1]
     temp2 = layerNormCPU(bufferH[:1])
     print(check(temp1,temp2,True), "max diff=%f"%(np.max(np.abs(temp1 - temp2))) )
-    
+    # 计算并打印执行时间
+    elapsed_time = end_time - start_time
+    print(f"代码执行耗时：{elapsed_time} 秒")
+
     for b in bufferD:
         cudart.cudaFree(b)
 
